@@ -1,4 +1,4 @@
-SRC += zyber.c
+INTROSPECTION_KEYMAP_C = zyber.c
 
 CAPS_WORD_ENABLE = yes
 TAP_DANCE_ENABLE = yes
