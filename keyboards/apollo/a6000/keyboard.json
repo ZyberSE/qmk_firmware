@@ -1,6 +1,6 @@
 {
-    "manufacturer": "Frooastside",
-    "keyboard_name": "Apollo A6000",
+    "manufacturer": "Apollo Computer",
+    "keyboard_name": "A6000",
     "maintainer": "ZyberSE",
     "bootloader": "rp2040",
     "processor": "RP2040",

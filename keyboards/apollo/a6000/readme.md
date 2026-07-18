@@ -1,12 +1,12 @@
-# Apollo A6000
+# Apollo Computer A6000
 
-An RP2040-based Amiga-layout keyboard used with the Apollo A6000 (Vampire/AC68080
-FPGA Amiga), to which it connects via a ribbon cable.
+An RP2040-based Amiga-layout keyboard sold by Apollo Computer for the Apollo A6000
+(Vampire/AC68080 FPGA Amiga), to which it connects via a ribbon cable.
 
-The USB identity — manufacturer string `Frooastside` and vendor ID `0x4642` —
-identifies the controller/firmware, not necessarily the keyboard itself. The origin
-of the PCB is unknown and may well be a custom build. This port is filed under
-`frooastside` to match the USB descriptor.
+The controller/firmware is by Frooastside: the stock firmware's USB manufacturer
+string is `Frooastside` and the vendor ID is `0x4642` (Frooastside's). This port
+keeps the vendor ID but reports `Apollo Computer` as the manufacturer, since Apollo
+Computer is the product's vendor.
 
 The keyboard runs QMK and presents as a **standard USB HID keyboard** — it sends
 ordinary HID keycodes, not Amiga raw-key codes. The stock firmware contains no
@@ -26,18 +26,18 @@ following were read back from a flash dump and are therefore authoritative:
 The physical key-layout coordinates were matched to photos of the keyboard.
 
 * Keyboard Maintainer: [ZyberSE](https://github.com/ZyberSE)
-* Hardware Supported: Frooastside Apollo A6000 (RP2040)
+* Hardware Supported: Apollo Computer A6000 keyboard (RP2040, Frooastside controller)
 * Matrix: 8 rows × 11 columns
 * Row pins: GP7 GP6 GP5 GP4 GP3 GP2 GP1 GP0
 * Column pins: GP19 GP17 GP16 GP15 GP14 GP13 GP12 GP11 GP10 GP9 GP8
 
 Make example for this keyboard (after setting up your build environment):
 
-    qmk compile -kb frooastside/apollo_a6000 -km default
+    qmk compile -kb apollo/a6000 -km default
 
 Flashing example for this keyboard:
 
-    qmk flash -kb frooastside/apollo_a6000 -km default
+    qmk flash -kb apollo/a6000 -km default
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools)
 and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for
