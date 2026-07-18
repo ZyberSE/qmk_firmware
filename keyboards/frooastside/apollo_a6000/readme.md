@@ -1,7 +1,12 @@
 # Apollo A6000
 
-An RP2040-based Amiga-layout keyboard by Frooastside, used with the Apollo A6000
-(Vampire/AC68080 FPGA Amiga), to which it connects via a ribbon cable.
+An RP2040-based Amiga-layout keyboard used with the Apollo A6000 (Vampire/AC68080
+FPGA Amiga), to which it connects via a ribbon cable.
+
+The USB identity — manufacturer string `Frooastside` and vendor ID `0x4642` —
+identifies the controller/firmware, not necessarily the keyboard itself. The origin
+of the PCB is unknown and may well be a custom build. This port is filed under
+`frooastside` to match the USB descriptor.
 
 The keyboard runs QMK and presents as a **standard USB HID keyboard** — it sends
 ordinary HID keycodes, not Amiga raw-key codes. The stock firmware contains no
