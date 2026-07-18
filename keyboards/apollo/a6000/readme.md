@@ -45,5 +45,11 @@ more information. Brand new to QMK? Start with our [Complete Newbs Guide](https:
 
 ## Bootloader
 
-Enter the bootloader by holding **Esc** while plugging in the keyboard (the RP2040
-`RPI-RP2` UF2 drive will appear), then copy the `.uf2` onto it.
+Enter the bootloader in any of these ways (the RP2040 `RPI-RP2` UF2 drive will
+appear — note that macOS sometimes will not auto-mount it in Finder, but the
+device is still reachable via `picotool`):
+
+* Hold **Esc** while plugging in the keyboard (bootmagic lite), or
+* Press **Right Alt + Esc** while the keyboard is running (combo → `QK_BOOT`).
+
+Then copy the `.uf2` onto `RPI-RP2` (or use `qmk flash` / `picotool load`).
