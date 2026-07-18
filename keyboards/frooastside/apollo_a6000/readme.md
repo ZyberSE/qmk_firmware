@@ -1,15 +1,24 @@
 # Apollo A6000
 
-An RP2040-based Amiga-layout keyboard by Frooastside, intended for use with the
-Apollo A6000 (Vampire/AC68080 FPGA Amiga). Standard USB HID keyboard; on the FPGA
-side the ribbon connection is USB and the Apollo core translates HID to Amiga
-raw-key codes.
+An RP2040-based Amiga-layout keyboard by Frooastside, used with the Apollo A6000
+(Vampire/AC68080 FPGA Amiga), to which it connects via a ribbon cable.
 
-This QMK port was **reconstructed by reverse-engineering the stock firmware**
-(matrix dimensions, row/column pin assignments, USB VID/PID and the base keymap
-were read back from a flash dump). The physical key layout coordinates are
-approximate and the diode direction is an assumption — verify against hardware
-before relying on it.
+The keyboard runs QMK and presents as a **standard USB HID keyboard** — it sends
+ordinary HID keycodes, not Amiga raw-key codes. The stock firmware contains no
+Amiga-specific keyboard protocol: there is no bit-banged or PIO serial output and
+nothing that encodes the Amiga keyboard protocol. How the Apollo side consumes the
+input over the ribbon cable was not investigated and is outside the scope of this
+firmware.
+
+This QMK port was **reconstructed by reverse-engineering the stock firmware**. The
+following were read back from a flash dump and are therefore authoritative:
+
+* Matrix dimensions and row/column pin assignments
+* Diode direction (`ROW2COL`, determined from the firmware's matrix-scan routine)
+* USB VID/PID and HID descriptors (byte-identical to the original)
+* The base keymap (byte-identical to the original)
+
+The physical key-layout coordinates were matched to photos of the keyboard.
 
 * Keyboard Maintainer: [ZyberSE](https://github.com/ZyberSE)
 * Hardware Supported: Frooastside Apollo A6000 (RP2040)
