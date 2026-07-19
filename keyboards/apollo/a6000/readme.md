@@ -21,6 +21,14 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for
 more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
+## Custom keycode: Caps Lock (A-Z)
+
+The Amiga doesn't honor the standard Caps Lock keycode, so the `vial` keymap
+replaces the physical Caps Lock key with a custom **Caps Lock (A-Z)** keycode:
+it toggles a shift-lock that only affects letters (A-Z), leaving numbers and
+symbols untouched. It shows up as a regular custom keycode in the Vial app, so
+it can be moved to any key or layer without recompiling.
+
 ## Bootloader
 
 Enter the bootloader in any of these ways (the RP2040 `RPI-RP2` UF2 drive will
