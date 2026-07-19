@@ -15,8 +15,8 @@ nothing that encodes the Amiga keyboard protocol. How the Apollo side consumes t
 input over the ribbon cable was not investigated and is outside the scope of this
 firmware.
 
-This QMK port was **reconstructed by reverse-engineering the stock firmware**. The
-following were read back from a flash dump and are therefore authoritative:
+This QMK port's mapping was derived from analysis of the stock firmware and
+verified against the physical keyboard. The following are authoritative:
 
 * Matrix dimensions and row/column pin assignments
 * Diode direction (`ROW2COL`, determined from the firmware's matrix-scan routine)
