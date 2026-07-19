@@ -1,32 +1,10 @@
 # Apollo Computer A6000
 
-An RP2040-based Amiga-layout keyboard sold by Apollo Computer for the Apollo A6000
-(Vampire/AC68080 FPGA Amiga), to which it connects via a ribbon cable.
-
-The controller/firmware is by Frooastside: the stock firmware's USB manufacturer
-string is `Frooastside` and the vendor ID is `0x4642` (Frooastside's). This port
-keeps the vendor ID but reports `Apollo Computer` as the manufacturer, since Apollo
-Computer is the product's vendor.
-
-The keyboard runs QMK and presents as a **standard USB HID keyboard** — it sends
-ordinary HID keycodes, not Amiga raw-key codes. The stock firmware contains no
-Amiga-specific keyboard protocol: there is no bit-banged or PIO serial output and
-nothing that encodes the Amiga keyboard protocol. How the Apollo side consumes the
-input over the ribbon cable was not investigated and is outside the scope of this
-firmware.
-
-This QMK port's mapping was derived from analysis of the stock firmware and
-verified against the physical keyboard. The following are authoritative:
-
-* Matrix dimensions and row/column pin assignments
-* Diode direction (`ROW2COL`, determined from the firmware's matrix-scan routine)
-* USB VID/PID and HID descriptors (byte-identical to the original)
-* The base keymap (byte-identical to the original)
-
-The physical key-layout coordinates were matched to photos of the keyboard.
+Vial-enabled QMK firmware for the built-in keyboard of the Apollo Computer A6000
+(RP2040), used with the Apollo A6000 (Vampire/AC68080 FPGA Amiga).
 
 * Keyboard Maintainer: [ZyberSE](https://github.com/ZyberSE)
-* Hardware Supported: Apollo Computer A6000 keyboard (RP2040, Frooastside controller)
+* Hardware Supported: Apollo Computer A6000 keyboard (RP2040)
 * Matrix: 8 rows × 11 columns
 * Row pins: GP7 GP6 GP5 GP4 GP3 GP2 GP1 GP0
 * Column pins: GP19 GP17 GP16 GP15 GP14 GP13 GP12 GP11 GP10 GP9 GP8
